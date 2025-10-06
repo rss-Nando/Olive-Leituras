@@ -1,24 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
         <title>Olive leituras</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="OliveHome.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <header>
-            <h1 class="title">Olive Leituras</h1>
-            <h2 class="subtitle">A sua biblioteca de livros em domínio público</h2>
-            <img src="logo.png">
+        <header class="cabecalho">
+            <img src="logoDefinitiva.png" alt="Olive Leituras">
+    
+            <div class="busca">
+                <form role="search" onsubmit="return false;">
+                    <input type="search" placeholder="Pesquisar livro" aria-label="Pesquisar livros">
+                    <button type="submit" aria-label="Pesquisar"> <img src="lupa.png" alt="Ícone de lupa"> </button>
+                </form>
+            </div>
         </header>
-    <form class="busca" onsubmit="">
-        <input type="search" placeholder="Pesquisar livro" arial-label="Pesquisar livros">
-        <button type="submit"> <img src="lupa.png"> </button>
-    </form>
-    <div class="Recomendações">
-        
-    </div>
+
+        <main class="principal">
+            <div class="recomendacoes">
+                
+            </div>
+        </main>
+
+        <footer class="pezinho">
+
+        </footer>
     </body>
 </html>
