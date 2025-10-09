@@ -2,33 +2,53 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
-        <title>Olive leituras</title>
+        <title>Olive Leituras - Biblioteca online</title>
+        <meta name="description" content="Olive Leituras - Sua biblioteca digital de livros e HQs em domínio público. Explore nosso catálogo de Batman e muito mais.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        
         <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+        
+        
         <link rel="stylesheet" href="OliveHome.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <header class="cabecalho">
-            <img src="logoDefinitiva.png" alt="Olive Leituras">
-    
-            <div class="busca">
-                <form role="search" onsubmit="return false;">
-                    <input type="search" placeholder="Pesquisar livro" aria-label="Pesquisar livros">
-                    <button type="submit" aria-label="Pesquisar"> <img src="lupa.png" alt="Ícone de lupa"> </button>
-                </form>
-            </div>
+        <header class="cabecalho" role="banner">
+            <img src="logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital">
         </header>
 
-        <main class="principal">
-            <div class="recomendacoes">
+        <main class="principal" role="main">
+            <section class="recomendacoes" aria-labelledby="titulo-recomendacoes">
+                <h2 id="titulo-recomendacoes" class="sr-only">Recomendações de Leitura - HQ's</h2>
                 
-            </div>
+                <div class="HQ">
+                    <img src="catalogo/batmanAnoUm.png" alt="Capa da HQ Batman Ano Um" width="150" height="225" loading="lazy">
+                    <h3>Batman Ano Um - Frank Miller</h3>
+                </div>
+                
+                <div class="HQ">
+                    <img src="catalogo/batmanCavaleiroDasTrevas.png" alt="Capa da HQ Batman Cavaleiro das Trevas" width="150" height="225" loading="lazy">
+                    <h3>Batman Cavaleiro das Trevas - Frank Miller</h3>
+                </div>
+                
+                <div class="HQ">
+                    <img src="catalogo/batmanDiaDasBruxas_1.png" alt="Capa da HQ Batman Longo Dia das Bruxas Parte 1" width="150" height="225" loading="lazy">
+                    <h3>Batman Longo Dia das Bruxas Parte 1 - Jeph Loeb</h3>
+                </div>
+                
+                <div class="HQ">
+                    <img src="catalogo/batmanDiaDasBruxas_2.png" alt="Capa da HQ Batman Longo Dia das Bruxas Parte 2" width="150" height="225" loading="lazy">
+                    <h3>Batman Longo Dia das Bruxas Parte 2 - Jeph Loeb</h3>
+                </div>
+            </section>
         </main>
 
-        <footer class="pezinho">
-
+        <footer class="pezinho" role="contentinfo">
+            <p>© 2025 Olive Leituras - Biblioteca online</p>
         </footer>
     </body>
 </html>
