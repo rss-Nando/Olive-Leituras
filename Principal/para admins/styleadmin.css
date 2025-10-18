@@ -1,0 +1,100 @@
+/* Reset e configurações globais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jacques Francois', serif;
+    background-image: url(fundo.png);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.cabecalho img {
+    width: min(15%, 200px);
+    min-width: 120px;
+}
+
+
+
+/* Conteúdo principal */
+.principal {
+    min-height: 60vh;
+    padding: 20px 0;
+}
+
+.formulario {
+    color: antiquewhite;
+    text-align: center;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border border-radius: 10px;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding-bottom: 2%;
+}
+
+/* Rodapé */
+.pezinho {
+    text-align: center;
+    color: #F5F5DC;
+    background-color: #302F2F;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cabecalho img {
+        width: 40%;
+    }
+    
+    .recomendacoes {
+        margin: 10px;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    
+    .HQ {
+        width: calc(50% - 20px);
+        padding: 15px;
+    }
+    
+    .HQ img {
+        width: 120px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho img {
+        width: 60%;
+    }
+    
+    .HQ {
+        width: 100%;
+    }
+    
+    .busca {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .busca input {
+        width: 90%;
+    }
+}
