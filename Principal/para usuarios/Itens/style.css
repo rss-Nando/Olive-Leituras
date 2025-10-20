@@ -59,9 +59,10 @@ body {
 
 .capa {
     background-color: #1B4728;
-    border-radius: 0 26px 26px 0; /* Simplificar */
+    border-radius: 26px;
     padding: 30px 40px;
     flex-shrink: 0; /* Evitar que diminua */
+    border: 2px solid rgba(255, 255, 255, .2);
 }
 
 .capa div {

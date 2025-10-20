@@ -1,36 +1,47 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
-        <meta charset="UTF-8">
-        <title>Olive Leituras - Biblioteca online</title>
-        <meta name="description" content="Olive Leituras - Sua biblioteca digital de livros e HQs em domínio público. Explore nosso catálogo de Batman e muito mais.">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        
-        
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Olive Leituras | Área do administrador</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='styleadmin.css'>
+        <script src='login.js'></script>
+
+        <!--fonte-->
         <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
-        
-        
-        <link rel="stylesheet" href="styleadmin.css">
+
+        <!--icones-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
-    
     <body>
-        <header class="cabecalho" role="banner">
-            <img src="logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital">
+        <header class="cabecalho">
+            <img src="logoDefinitiva.png" alt="Logo do Olive Leituras">
         </header>
 
-        <main class="principal" role="main">
-            <div class="insercao">
-                <form name="nomeLivro">nome</form>
-                <form name="autorLivro">autor</form>
-            </div>
+        <main class="principal">
+            <form class="formulario">
+                <h1>Insira os dados do volume</h1>
+                <div class="inputBox">
+                    <input placeholder="Nome do volume" type="text">
+                </div>
+                <div class="inputBox">
+                    <input placeholder="Nome do autor" type="text">
+                </div>
+                <div class="inputBox">
+                    <input placeholder="Sinopse do volume" type="text">
+                </div>
+                <div class="inputBox">
+                    <input placeholder="Foto da capa" type="file">
+                </div>
+                <div class="download">
+                    <a href="/Principal/landing/landingpage.html">Enviar</a>
+                </div>
+            </form> 
         </main>
 
-        <footer class="pezinho" role="contentinfo">
-            <p>© 2025 Olive Leituras - Biblioteca online</p>
+        <footer class="pezinho">
+
         </footer>
     </body>
 </html>
