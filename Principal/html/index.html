@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Olive Leituras - Biblioteca online</title>
+        <meta name="description" content="Olive Leituras - Sua biblioteca digital de livros e HQs em domínio público. Explore nosso catálogo de Batman e muito mais.">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="/Principal/CSS/OliveHome.css">
+    </head>
+    <body>
+        <header class="cabecalho" role="banner">
+            <img src="/Principal/imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital">
+            <div class="login">
+                <a href="login.html" class="botao-login" aria-label="Fazer login na conta">
+                    <span class="login-texto">Login</span>
+                    <svg class="login-icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/>
+                        <polyline points="10,17 15,12 10,7"/>
+                        <line x1="15" y1="12" x2="3" y2="12"/>
+                    </svg>
+                </a>
+            </div>
+            <nav class="navegacao" role="navigation" aria-label="Menu principal">
+                <ul>
+                    <li><a href="#hqs">HQ's</a></a></li>
+                    <li><a href="#fantasia">Fantasia</a></li>
+                    <li><a href="#catalogo">Catálogo Completo</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="principal" role="main">
+            <h1 class="sr-only">Recomendações de Leitura</h1>
+            
+            <!-- Seção de HQs -->
+            <h2 id="titulo-hqs" class="titulo-recomendacoes">HQ's e Graphic Novels</h2>
+            <section id="hqs" class="recomendacoes" aria-labelledby="titulo-hqs">
+                
+                <a href="batmanY1.html" class="HQ">
+                    <img src="../imagensCatalogo/batmanAnoUm.png" alt="Capa da HQ Batman Ano Um" width="150" height="225" loading="lazy">
+                    <h3>Batman Ano Um - Frank Miller</h3>
+                </a>
+                
+                <a href="batmanCdT.html" class="HQ">
+                    <img src="../imagensCatalogo/batmanCavaleiroDasTrevas.png" alt="Capa da HQ Batman Cavaleiro das Trevas" width="150" height="225" loading="lazy">
+                    <h3>Batman Cavaleiro das Trevas - Frank Miller</h3>
+                </a>
+                
+                <a href="batmanLDdB1.html" class="HQ">
+                    <img src="../imagensCatalogo/batmanDiaDasBruxas_1.png" alt="Capa da HQ Batman Longo Dia das Bruxas Parte 1" width="150" height="225" loading="lazy">
+                    <h3>Batman Longo Dia das Bruxas Parte 1 - Jeph Loeb</h3>
+                </a>
+                
+                <a href="batmanLDdB2.html" class="HQ">
+                    <img src="../imagensCatalogo/batmanDiaDasBruxas_2.png" alt="Capa da HQ Batman Longo Dia das Bruxas Parte 2" width="150" height="225" loading="lazy">
+                    <h3>Batman Longo Dia das Bruxas Parte 2 - Jeph Loeb</h3>
+                </a>
+            </section>
+
+            <!-- Seção de Tolkien -->
+            <h2 id="titulo-tolkien" class="titulo-recomendacoes">Aventura e Fantasia</h2>
+            <section id="fantasia" class="recomendacoes" aria-labelledby="titulo-tolkien">
+                
+                <a href="lotr1.html" class="HQ">
+                    <img src="../imagensCatalogo/lotr1.png" alt="Capa do livro O Senhor dos Anéis: A Sociedade do Anel" width="150" height="225" loading="lazy">
+                    <h3>O Senhor dos Anéis, a Sociedade do Anel - J.R.R. Tolkien</h3>
+                </a>
+                
+                <a href="lotr2.html" class="HQ">
+                    <img src="../imagensCatalogo/lotr2.png" alt="Capa do livro O Senhor dos Anéis: As Duas Torres" width="150" height="225" loading="lazy">
+                    <h3>O Senhor dos Anéis, as Duas Torres - J.R.R. Tolkien</h3>
+                </a>
+                
+                <a href="lotr3.html" class="HQ">
+                    <img src="../imagensCatalogo/lotr3.png" alt="Capa do livro O Senhor dos Anéis: O Retorno do Rei" width="150" height="225" loading="lazy">
+                    <h3>O Senhor dos Anéis, o Retorno do Rei - J.R.R. Tolkien</h3>
+                </a>
+                
+                <a href="oHobbit.html" class="HQ">
+                    <img src="../imagensCatalogo/oHobbit.png" alt="Capa do livro O Hobbit" width="150" height="225" loading="lazy">
+                    <h3>O Hobbit - J.R.R. Tolkien</h3>
+                </a>
+            </section>
+
+            <!-- Seção do Catálogo Completo (exemplo) -->
+            <h2 id="titulo-catalogo" class="titulo-recomendacoes">Catálogo Completo</h2>
+            <section id="catalogo" class="recomendacoes" aria-labelledby="titulo-catalogo">
+                <!-- Aqui você pode adicionar mais itens do catálogo -->
+                <p style="color: white; text-align: center; width: 100%;">
+                    Em breve: Mais títulos serão adicionados ao nosso catálogo!
+                </p>
+            </section>
+        </main>
+
+        <footer class="pezinho" role="contentinfo">
+            <div class="conteudo-rodape">
+                <!-- Informações da Empresa -->
+                <div class="info-empresa">
+                    <img src="/Principal/imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras" class="logo-rodape">
+                    <p class="slogan">Sua biblioteca digital de tesouros literários</p>
+                    <p class="descricao">Explore milhares de livros e HQs em domínio público. Da Terra-média às ruas de Gotham, sua próxima aventura espera por você.</p>
+                </div>
+                
+                <!-- Links Úteis -->
+                <div class="links-uteis">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="#hqs">HQ's e Graphic Novels</a></li>
+                        <li><a href="#fantasia">Literatura Fantástica</a></li>
+                        <li><a href="#catalogo">Catálogo Completo</a></li>
+                        <li><a href="#novidades">Novas Aquisições</a></li>
+                        <li><a href="#populares">Mais Populares</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contato -->
+                <div class="contato">
+                    <h3>Contato</h3>
+                    <ul class="info-contato">
+                        <li>
+                            <svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            r.s.silvafernando@gmail.com
+                        </li>
+                        <li>
+                            <svg class="icone" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            Goiás, Brasil
+                        </li>
+                    </ul>
+                    
+                    <div class="redes-sociais">
+                        <a href="#" class="rede-social" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Base do Rodapé -->
+                <div class="base-rodape">
+                    <p class="copyright">© 2025 Olive Leituras - Biblioteca online. Todos os direitos reservados.</p>
+                    <div class="links-legais">
+                        <a href="#">Política de Privacidade</a>
+                        <a href="#">Termos de Uso</a>
+                        <a href="#">DMCA</a>
+                        <a href="#">Acessibilidade</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

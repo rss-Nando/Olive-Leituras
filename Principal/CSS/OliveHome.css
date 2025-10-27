@@ -1,0 +1,625 @@
+/* Reset e configurações globais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jacques Francois', serif;
+    background-image: url(/Principal/imagensDaPagina/fundo.png);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Importante para o posicionamento absoluto do botão */
+}
+
+.cabecalho img {
+    width: min(15%, 200px);
+    min-width: 120px;
+}
+
+/* Barra de busca (descartado) */
+.busca {
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.busca input {
+    width: min(50%, 300px);
+    padding: 10px;
+    border: 2px solid #592B02;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.busca button {
+    padding: 10px 20px;
+    background-color: #592B02;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.busca button:hover {
+    background-color: #8B4513;
+}
+
+/* Conteúdo principal */
+.principal {
+    min-height: 60vh;
+    padding: 20px 0;
+}
+
+.recomendacoes {
+    margin: 20px;
+    background-color: #1B4728;
+    border-radius: 25px;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    border: 2px solid rgba(255, 255, 255, .2);
+}
+
+.sr-only {
+    color: antiquewhite;
+    text-align: center;
+}
+
+.HQ {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 20px 20px 60px; /* Alterado: mais padding na parte inferior */
+    width: min(100%, 250px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.HQ:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.HQ img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.HQ h3 {
+    color: #F5F5DC;
+    margin: 0;
+    font-size: 16px;
+    font-weight: normal;
+    background-color: #402C25;
+    width: 100%;
+    padding: 10px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+/* Estilização do menu de navegação */
+.navegacao {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.navegacao ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.navegacao li {
+    margin: 0;
+}
+
+.navegacao a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #AA8C2C 100%);
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 18px;
+    font-weight: normal;
+    transition: all 0.3s ease;
+    border: 2px solid #B8860B; /* Borda dourada escura */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.navegacao a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.navegacao a:hover {
+    background: linear-gradient(135deg, #FFE55C 0%, #E6C158 50%, #C9A742 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navegacao a:hover::before {
+    left: 100%;
+}
+
+.navegacao a:active {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Títulos das seções */
+.titulo-recomendacoes {
+    text-align: center;
+    color: black;
+    font-size: 28px;
+    margin: 40px 0 20px 0;
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #AA8C2C 100%);
+    border-radius: 15px;
+    display: inline-block;
+    border: 2px solid #B8860B; /* Borda dourada escura */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Suavização da rolagem para âncoras */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilo para quando uma seção é alvo da âncora */
+section:target {
+    animation: highlight 2s ease;
+}
+
+@keyframes highlight {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+
+/* Ajuste de posicionamento para compensar o header fixo */
+section[id] {
+    scroll-margin-top: 100px;
+}
+
+/* BOTÃO DE LOGIN - POSIÇÃO ORIGINAL NO CANTO SUPERIOR DIREITO */
+.login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+/* Botão de login - PADRONIZADO COM O TEMA DOURADO */
+.botao-login {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #AA8C2C 100%);
+    color: black;
+    border: 2px solid #B8860B;
+    border-radius: 25px;
+    font-family: 'Jacques Francois', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+.botao-login:hover {
+    background: linear-gradient(135deg, #FFE55C 0%, #E6C158 50%, #C9A742 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    color: black;
+}
+
+.botao-login:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login-texto {
+    font-weight: bold;
+}
+
+.login-icone {
+    transition: transform 0.3s ease;
+    stroke: black; /* Garante que o ícone seja preto para contrastar com o fundo dourado */
+}
+
+.botao-login:hover .login-icone {
+    transform: translateX(3px);
+}
+
+
+/* Rodapé - VERSÃO MELHORADA */
+.pezinho {
+    text-align: center;
+    color: #F5F5DC;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    padding: 50px 20px 30px;
+    margin-top: 60px;
+    border-top: 4px solid #B8860B;
+    position: relative;
+    min-height: auto;
+}
+
+.pezinho::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #FFD700, transparent);
+}
+
+.pezinho .conteudo-rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    align-items: start;
+}
+
+.pezinho .info-empresa {
+    text-align: left;
+}
+
+.pezinho .logo-rodape {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.pezinho .slogan {
+    font-size: 18px;
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.pezinho .descricao {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #CCCCCC;
+}
+
+.pezinho .links-uteis {
+    text-align: left;
+}
+
+.pezinho .links-uteis h3 {
+    color: #FFD700;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #B8860B;
+    padding-bottom: 10px;
+}
+
+.pezinho .links-uteis ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pezinho .links-uteis li {
+    margin-bottom: 12px;
+}
+
+.pezinho .links-uteis a {
+    color: #F5F5DC;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pezinho .links-uteis a:hover {
+    color: #FFD700;
+    transform: translateX(5px);
+}
+
+.pezinho .links-uteis a::before {
+    content: '▸';
+    color: #B8860B;
+    font-size: 12px;
+}
+
+.pezinho .contato {
+    text-align: left;
+}
+
+.pezinho .contato h3 {
+    color: #FFD700;
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #B8860B;
+    padding-bottom: 10px;
+}
+
+.pezinho .info-contato {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pezinho .info-contato li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #CCCCCC;
+}
+
+.pezinho .info-contato .icone {
+    width: 20px;
+    height: 20px;
+    color: #FFD700;
+}
+
+.pezinho .redes-sociais {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.pezinho .rede-social {
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFD700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid #B8860B;
+}
+
+.pezinho .rede-social:hover {
+    background: #FFD700;
+    color: #1a1a1a;
+    transform: translateY(-3px);
+}
+
+.pezinho .base-rodape {
+    grid-column: 1 / -1;
+    border-top: 1px solid #444;
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.pezinho .copyright {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.pezinho .links-legais {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.pezinho .links-legais a {
+    color: #CCCCCC;
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.3s ease;
+}
+
+.pezinho .links-legais a:hover {
+    color: #FFD700;
+}
+
+/* Responsividade do Rodapé */
+@media (max-width: 768px) {
+    .pezinho {
+        padding: 40px 15px 20px;
+    }
+    
+    .pezinho .conteudo-rodape {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .pezinho .info-empresa,
+    .pezinho .links-uteis,
+    .pezinho .contato {
+        text-align: center;
+    }
+    
+    .pezinho .links-uteis a {
+        justify-content: center;
+    }
+    
+    .pezinho .info-contato li {
+        justify-content: center;
+    }
+    
+    .pezinho .redes-sociais {
+        justify-content: center;
+    }
+    
+    .pezinho .links-legais {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pezinho {
+        padding: 30px 10px 15px;
+    }
+    
+    .pezinho .slogan {
+        font-size: 16px;
+    }
+    
+    .pezinho .links-uteis h3,
+    .pezinho .contato h3 {
+        font-size: 18px;
+    }
+    
+    .pezinho .links-legais {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cabecalho img {
+        width: 40%;
+    }
+    
+    .recomendacoes {
+        margin: 10px;
+        padding: 20px 10px;
+        gap: 20px;
+    }
+    
+    .HQ {
+        width: calc(50% - 20px);
+        padding: 15px;
+    }
+    
+    .HQ img {
+        width: 120px;
+        height: 180px;
+    }
+    
+    /* Responsividade do menu */
+    .navegacao ul {
+        gap: 15px;
+    }
+    
+    .navegacao a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+    .titulo-recomendacoes {
+        font-size: 24px;
+        margin: 30px 0 15px 0;
+        padding: 12px 25px;
+    }
+    
+    /* Responsividade do login */
+    .login {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .botao-login {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+    
+    .login-icone {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho img {
+        width: 60%;
+    }
+    
+    .HQ {
+        width: 100%;
+    }
+    
+    .busca {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .busca input {
+        width: 90%;
+    }
+    
+    /* Responsividade do menu */
+    .navegacao ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .navegacao a {
+        width: 200px;
+        text-align: center;
+    }
+    
+    .titulo-recomendacoes {
+        font-size: 20px;
+        margin: 25px 0 10px 0;
+        padding: 10px 20px;
+    }
+    
+    /* Responsividade do login - MANTENDO NO CANTO SUPERIOR DIREITO */
+    .login {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .botao-login {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+}

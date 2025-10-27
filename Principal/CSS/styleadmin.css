@@ -1,0 +1,326 @@
+/* Reset e configurações globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Jacques Francois', serif;
+    background-image: url(../imagensDaPagina/fundo.png);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.cabecalho img {
+    width: min(15%, 200px);
+    min-width: 120px;
+}
+
+.cabecalho a {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.cabecalho a:hover {
+    transform: scale(1.05);
+}
+
+/* Conteúdo principal */
+.principal {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 60vh;
+}
+
+/* Formulário */
+.formulario {
+    background: rgba(27, 71, 40, 0.95);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    padding: 50px 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.formulario h1 {
+    color: #FFD700;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Input boxes */
+.inputBox {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.inputBox label {
+    position: absolute;
+    top: -10px;
+    left: 15px;
+    background: #1B4728;
+    padding: 0 8px;
+    font-size: 14px;
+    color: #FFD700;
+    z-index: 1;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    border: 2px solid #B8860B;
+    border-radius: 15px;
+    font-size: 16px;
+    font-family: 'Jacques Francois', serif;
+    background: rgba(245, 245, 220, 0.95);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.inputBox input:focus {
+    outline: none;
+    border-color: #FFD700;
+    background: rgba(255, 253, 245, 0.98);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.inputBox input::placeholder {
+    color: #666;
+}
+
+.inputBox i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #592B02;
+    font-size: 22px;
+    z-index: 2;
+}
+
+/* Lembrar e esqueci senha */
+.lembrar-esqueci {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #F5F5DC;
+    cursor: pointer;
+}
+
+.lembrar input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #FFD700;
+}
+
+.esqueci-senha {
+    color: #FFD700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.esqueci-senha:hover {
+    color: #FFE55C;
+    text-decoration: underline;
+    transform: translateX(3px);
+}
+
+/* Botão de login */
+.botao-login {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #AA8C2C 100%);
+    color: black;
+    border: 2px solid #B8860B;
+    border-radius: 15px;
+    font-size: 18px;
+    font-family: 'Jacques Francois', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.botao-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.botao-login:hover::before {
+    left: 100%;
+}
+
+.botao-login:hover {
+    background: linear-gradient(135deg, #FFE55C 0%, #E6C158 50%, #C9A742 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.botao-login:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Link de cadastro */
+.cadastro-link {
+    text-align: center;
+    color: #F5F5DC;
+    font-size: 15px;
+}
+
+.cadastro-link a {
+    color: #FFD700;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cadastro-link a:hover {
+    color: #FFE55C;
+    text-decoration: underline;
+    transform: translateX(3px);
+}
+
+/* Rodapé */
+.pezinho {
+    text-align: center;
+    color: #F5F5DC;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    padding: 30px 20px;
+    margin-top: auto;
+    border-top: 3px solid #B8860B;
+}
+
+.pezinho a {
+    color: #FFD700;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.pezinho a:hover {
+    color: #FFE55C;
+    text-decoration: underline;
+    transform: translateX(-5px);
+}
+
+/* Acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .cabecalho img {
+        width: 40%;
+    }
+    
+    .formulario {
+        margin: 20px;
+        padding: 40px 30px;
+        max-width: 400px;
+    }
+    
+    .formulario h1 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .inputBox input {
+        padding: 16px 45px 16px 18px;
+    }
+    
+    .lembrar-esqueci {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .cabecalho img {
+        width: 50%;
+    }
+    
+    .formulario {
+        margin: 15px;
+        padding: 30px 25px;
+        border-radius: 20px;
+    }
+    
+    .formulario h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    .inputBox input {
+        padding: 14px 40px 14px 16px;
+        font-size: 15px;
+    }
+    
+    .inputBox i {
+        font-size: 20px;
+        right: 15px;
+    }
+    
+    .botao-login {
+        padding: 16px;
+        font-size: 16px;
+    }
+    
+    .lembrar-esqueci {
+        font-size: 13px;
+    }
+    
+    .cadastro-link {
+        font-size: 14px;
+    }
+}

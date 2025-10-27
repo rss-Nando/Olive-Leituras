@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>Olive Leituras | Login</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='../CSS/styleadmin.css'>
+        <script src='login.js'></script>
+
+        <!--fonte-->
+        <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+
+        <!--icones-->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    </head>
+    <body>
+        <header class="cabecalho">
+            <a href="index.html" aria-label="Voltar para página inicial">
+                <img src="../imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital">
+            </a>
+        </header>
+
+        <main class="principal">
+            <form class="formulario" id="loginForm">
+                <h1>Login e Senha</h1>
+                
+                <div class="inputBox">
+                    <label for="email" class="sr-only">E-mail</label>
+                    <input 
+                        id="email"
+                        name="email" 
+                        placeholder="seu@email.com" 
+                        type="email" 
+                        required
+                        aria-required="true"
+                    >
+                    <i class="bx bxs-user" aria-hidden="true"></i>
+                </div>
+                
+                <div class="inputBox">
+                    <label for="senha" class="sr-only">Senha</label>
+                    <input 
+                        id="senha"
+                        name="senha" 
+                        placeholder="Sua senha" 
+                        type="password" 
+                        required
+                        minlength="6"
+                        aria-required="true"
+                    >
+                    <i class="bx bxs-lock-alt" aria-hidden="true"></i>
+                </div>
+
+                <div class="lembrar-esqueci">
+                    <label class="lembrar">
+                        <input type="checkbox" name="lembrar">
+                        <span>Lembrar de mim</span>
+                    </label>
+                    <a href="forgot.html" class="esqueci-senha">Esqueci a senha</a>
+                </div>
+                
+                <button type="submit" class="botao-login">
+                    Entrar
+                </button>
+
+                <div class="cadastro-link">
+                    <p>Não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
+                </div>
+            </form> 
+        </main>
+
+        <footer class="pezinho">
+            <p>&copy; 2025 Olive Leituras - Biblioteca online</p>
+            <a href="index.html">← Voltar para o catálogo</a>
+        </footer>
+    </body>
+</html>
