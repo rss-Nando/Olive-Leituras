@@ -26,15 +26,166 @@ body {
     position: relative; /* Para posicionar o botão voltar */
 }
 
-.cabecalho a {
-    color: wheat;
-    text-decoration: none; /* Remover sublinhado */
-    position: absolute;
-    left: 20px; /* Posicionar à esquerda */
+/* BOTÃO VOLTOR PREMIUM */
+/* BOTÃO VOLTAR ATUALIZADO - ESTILO SIMILAR AO BOTÃO COMPRAR */
+.botao-voltar.premium {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 15px 30px;
+    color: #1a1a1a;
+    text-decoration: none;
+    background: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #AA8C2C 100%);
+    border: 2px solid #B8860B;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    font-family: 'Jacques Francois', serif;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    min-width: 200px;
 }
 
-.cabecalho a:hover {
-    text-decoration: underline; /* Feedback visual */
+/* Container do Ícone - Simplificado */
+.icone-container {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Ícones SVG */
+.icone-seta {
+    width: 20px;
+    height: 20px;
+    transition: all 0.3s ease;
+}
+
+.icone-casa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+/* Texto - Simplificado */
+.texto-voltar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    line-height: 1.2;
+}
+
+.texto-principal {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.texto-secundario {
+    font-size: 11px;
+    color: #2c2c2c;
+    opacity: 0.9;
+    letter-spacing: 0.3px;
+}
+
+/* Efeito de brilho igual ao botão comprar */
+.botao-voltar.premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+/* ===== ESTADOS DE INTERAÇÃO ===== */
+
+/* Hover */
+.botao-voltar.premium:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #FFDF00 0%, #DAA520 50%, #B8860B 100%);
+}
+
+.botao-voltar.premium:hover::before {
+    left: 100%;
+}
+
+.botao-voltar.premium:hover .icone-container {
+    transform: translateX(-3px);
+}
+
+.botao-voltar.premium:hover .icone-seta {
+    opacity: 0;
+    transform: translateX(5px);
+}
+
+.botao-voltar.premium:hover .icone-casa {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Focus - Acessibilidade */
+.botao-voltar.premium:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(244, 208, 63, 0.5);
+}
+
+/* Active */
+.botao-voltar.premium:active {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading State - Removido a complexidade desnecessária */
+.botao-voltar.premium.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+/* Ajuste no cabeçalho para o novo botão */
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.navegacao-cabecalho {
+    position: absolute;
+    left: 5%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .navegacao-cabecalho {
+        position: static;
+        margin-bottom: 15px;
+    }
+    
+    .botao-voltar.premium {
+        min-width: 180px;
+        padding: 12px 25px;
+    }
+    
+    .texto-principal {
+        font-size: 14px;
+    }
+    
+    .texto-secundario {
+        font-size: 10px;
+    }
 }
 
 .cabecalho img {
@@ -143,12 +294,291 @@ body {
 }
 
 /* Rodapé */
+/* ===== FOOTER ATUALIZADO - OLIVE LEITURAS ===== */
 .pezinho {
     text-align: center;
     color: #F5F5DC;
-    background-color: #302F2F;
-    padding: 20px;
-    margin-top: 40px;
+    background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+    padding: 50px 20px 30px;
+    margin-top: 80px;
+    border-top: 4px solid #D4AF37;
+    position: relative;
+    font-family: 'Jacques Francois', serif;
+}
+
+/* Linha decorativa superior */
+.pezinho::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #F4D03F, transparent);
+    z-index: 1;
+}
+
+/* Container principal do rodapé */
+.conteudo-rodape {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    margin-bottom: 40px;
+}
+
+/* ===== SEÇÃO DE CONTATO ===== */
+.contato-rodape h3 {
+    color: #F4D03F;
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-align: left;
+    border-bottom: 2px solid #D4AF37;
+    padding-bottom: 10px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+}
+
+.info-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+}
+
+.item-contato {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #CCCCCC;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.item-contato:hover {
+    transform: translateX(5px);
+}
+
+.icone-contato {
+    color: #F4D03F;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.item-contato:hover .icone-contato {
+    transform: scale(1.1);
+}
+
+/* Estilização dos ícones SVG */
+.item-contato svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.item-contato a {
+    color: #F5F5DC;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+}
+
+.item-contato a:hover {
+    color: #F4D03F;
+}
+
+.item-contato span {
+    font-size: 16px;
+    color: #F5F5DC;
+    letter-spacing: 0.3px;
+}
+
+/* ===== SEÇÃO DA EMPRESA ===== */
+.info-empresa {
+    text-align: right;
+    padding-left: 20px;
+}
+
+.info-empresa h3 {
+    color: #F4D03F;
+    font-size: 28px;
+    margin-bottom: 15px;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.slogan {
+    font-size: 16px;
+    color: #CCCCCC;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+/* ===== BASE DO RODAPÉ ===== */
+.base-rodape {
+    grid-column: 1 / -1;
+    border-top: 1px solid #444;
+    padding-top: 30px;
+    margin-top: 20px;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.links-legais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.links-legais a {
+    color: #CCCCCC;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+}
+
+.links-legais a:hover {
+    color: #F4D03F;
+    background: rgba(244, 208, 63, 0.1);
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .pezinho {
+        padding: 40px 20px 25px;
+        margin-top: 60px;
+    }
+    
+    .conteudo-rodape {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .contato-rodape h3,
+    .info-contato {
+        text-align: center;
+    }
+    
+    .info-empresa {
+        text-align: center;
+        padding-left: 0;
+        border-top: 1px solid #444;
+        padding-top: 30px;
+    }
+    
+    .item-contato {
+        justify-content: center;
+    }
+    
+    .links-legais {
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .pezinho {
+        padding: 30px 15px 20px;
+        margin-top: 50px;
+    }
+    
+    .conteudo-rodape {
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .contato-rodape h3 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .info-empresa h3 {
+        font-size: 24px;
+    }
+    
+    .slogan {
+        font-size: 15px;
+    }
+    
+    .item-contato {
+        gap: 12px;
+    }
+    
+    .item-contato svg {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .item-contato a,
+    .item-contato span {
+        font-size: 14px;
+    }
+    
+    .links-legais {
+        gap: 15px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .links-legais a {
+        font-size: 13px;
+    }
+    
+    .copyright {
+        font-size: 13px;
+    }
+}
+
+/* Efeitos de foco para acessibilidade */
+.item-contato a:focus,
+.links-legais a:focus {
+    outline: 2px solid #F4D03F;
+    outline-offset: 2px;
+    border-radius: 3px;
+}
+
+/* Animação suave para todo o footer */
+.pezinho {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Melhorias de performance */
+.pezinho * {
+    box-sizing: border-box;
+}
+
+/* Estados de loading (opcional) */
+.pezinho.loading {
+    opacity: 0.7;
+    pointer-events: none;
 }
 
 /* Responsividade */
