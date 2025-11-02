@@ -460,6 +460,49 @@ body {
 
 /* Tablets */
 @media (max-width: 768px) {
+    .navegacao-cabecalho {
+        position: static;
+        margin-bottom: 15px;
+    }
+    
+    .botao-voltar.premium {
+        min-width: 180px;
+        padding: 12px 25px;
+    }
+    
+    .texto-principal {
+        font-size: 14px;
+    }
+    
+    .texto-secundario {
+        font-size: 10px;
+    }
+    
+    .cabecalho {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .informacoes {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .capa {
+        border-radius: 26px;
+        align-self: center;
+        padding: 20px;
+    }
+    
+    .texto {
+        margin: 0;
+        padding: 0 5%;
+    }
+    
+    .texto p {
+        text-align: left;
+    }
+    
     .pezinho {
         padding: 40px 20px 25px;
         margin-top: 60px;
@@ -494,6 +537,23 @@ body {
 
 /* Mobile */
 @media (max-width: 480px) {
+    .principal {
+        padding: 20px 3%;
+    }
+    
+    .capa {
+        padding: 15px;
+    }
+    
+    .texto h2 {
+        font-size: 1.3rem;
+    }
+    
+    .download {
+        width: 100%;
+        max-width: 200px;
+    }
+    
     .pezinho {
         padding: 30px 15px 20px;
         margin-top: 50px;
@@ -543,92 +603,5 @@ body {
     
     .copyright {
         font-size: 13px;
-    }
-}
-
-/* Efeitos de foco para acessibilidade */
-.item-contato a:focus,
-.links-legais a:focus {
-    outline: 2px solid #F4D03F;
-    outline-offset: 2px;
-    border-radius: 3px;
-}
-
-/* Animação suave para todo o footer */
-.pezinho {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Melhorias de performance */
-.pezinho * {
-    box-sizing: border-box;
-}
-
-/* Estados de loading (opcional) */
-.pezinho.loading {
-    opacity: 0.7;
-    pointer-events: none;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .cabecalho {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .cabecalho a {
-        position: static; /* Voltar ao fluxo normal */
-        align-self: flex-start;
-    }
-    
-    .informacoes {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .capa {
-        border-radius: 26px;
-        align-self: center; /* Centralizar na mobile */
-        padding: 20px;
-    }
-    
-    .texto {
-        margin: 0; /* Remover margens fixas */
-        padding: 0 5%;
-    }
-    
-    .texto p {
-        text-align: left; /* Justificado pode ser difícil em mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .principal {
-        padding: 20px 3%;
-    }
-    
-    .capa {
-        padding: 15px;
-    }
-    
-    .texto h2 {
-        font-size: 1.3rem;
-    }
-    
-    .download {
-        width: 100%;
-        max-width: 200px;
     }
 }
