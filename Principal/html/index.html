@@ -13,9 +13,37 @@
         <link rel="stylesheet" href="/Principal/CSS/OliveHome.css">
     </head>
     <body>
-        <header class="cabecalho" role="banner">
-            <img src="/Principal/imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital">
-            <div class="login">
+    <header class="cabecalho" role="banner">
+        <div class="cabecalho-container">
+            <!-- Logo -->
+            <div class="logo-container">
+                <img src="/Principal/imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital" class="logo">
+            </div>
+
+            <!-- Barra de Busca -->
+            <div class="busca-container">
+                <form class="form-busca" role="search">
+                    <div class="campo-busca">
+                        <input 
+                            type="search" 
+                            id="campo-busca" 
+                            name="q" 
+                            placeholder="Buscar livros, HQs, autores..."
+                            aria-label="Buscar na biblioteca"
+                            class="input-busca"
+                        >
+                        <button type="submit" class="botao-busca" aria-label="Executar busca">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"/>
+                                <path d="m21 21-4.3-4.3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Login -->
+            <div class="login-container">
                 <a href="login.html" class="botao-login" aria-label="Fazer login na conta">
                     <span class="login-texto">Login</span>
                     <svg class="login-icone" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -25,14 +53,25 @@
                     </svg>
                 </a>
             </div>
-            <nav class="navegacao" role="navigation" aria-label="Menu principal">
-                <ul>
-                    <li><a href="#hqs">HQ's</a></a></li>
-                    <li><a href="#fantasia">Fantasia</a></li>
-                    <li><a href="#catalogo">Catálogo Completo</a></li>
-                </ul>
-            </nav>
-        </header>
+        </div>
+
+        <!-- Navegação -->
+        <nav class="navegacao" role="navigation" aria-label="Menu principal">
+            <ul class="menu-navegacao">
+                <li><a href="#hqs" class="link-navegacao">HQ's</a></li>
+                <li><a href="#fantasia" class="link-navegacao">Fantasia</a></li>
+                <li><a href="#horror" class="link-navegacao">Horror</a></li>
+                <li><a href="#catalogo" class="link-navegacao">Catálogo Completo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Área de resultados da busca -->
+    <div id="resultados-busca" class="resultados-busca" aria-live="polite" hidden>
+        <!-- Resultados serão inseridos aqui via JavaScript -->
+    </div>
+
+    <script src="../JS/busca.js"></script>
 
         <main class="principal" role="main">
             <h1 class="sr-only">Recomendações de Leitura</h1>
@@ -69,6 +108,11 @@
                 <a href="batmanAPM.html" class="HQ">
                     <img src="../imagensCatalogo/batmanAPM.png" alt="Capa da HQ Batman A piada Mortal" width="150" height="225" loading="lazy">
                     <h3>Batman: a Piada Mortal: Edição Absoluta - Alan Moore</h3>
+                </a>
+
+                <a href="Vvinganca.html" class="HQ">
+                    <img src="../imagensCatalogo/Vdivinganca.png" alt="Capa da HQ V de Vingança" width="150" height="225" loading="lazy">
+                    <h3>V de Vingança - Alan Moore</h3>
                 </a>
             </section>
 
@@ -112,6 +156,17 @@
                 </a>
             </section>
 
+            <!--Seção Horror Cósmico-->
+            <h2 id="titulo-lovecraft" class="titulo-recomendacoes">Horror</h2>
+            <section id="horror" class="recomendacoes" aria-labelledby="titulo-lovecraft">
+                
+                <a href="cthulhu.html" class="HQ">
+                    <img src="../imagensCatalogo/cthulhu.png" alt="Capa do Livro: O Chamado de Cthulhu" width="150" height="225" loading="lazy">
+                    <h3>O chamado de Cthulhu - H.P Lovecraft</h3>
+                </a>
+                
+            </section>
+
             <!-- Seção do Catálogo Completo (exemplo temporário) -->
             <h2 id="titulo-catalogo" class="titulo-recomendacoes">Catálogo Completo</h2>
             <section id="catalogo" class="recomendacoes" aria-labelledby="titulo-catalogo">
@@ -120,6 +175,7 @@
                     Em breve: Mais títulos serão adicionados ao nosso catálogo!
                 </p>
             </section>
+
         </main>
 
         <footer class="pezinho" role="contentinfo">
@@ -174,10 +230,8 @@
                 <div class="base-rodape">
                     <p class="copyright">© 2025 Olive Leituras - Biblioteca online. Todos os direitos reservados.</p>
                     <div class="links-legais">
-                        <a href="#">Política de Privacidade</a>
-                        <a href="#">Termos de Uso</a>
-                        <a href="#">DMCA</a>
-                        <a href="#">Acessibilidade</a>
+                        <a href="pprivacidade.html">Política de Privacidade</a>
+                        <a href="termos.html">Termos de Uso</a>
                     </div>
                 </div>
             </div>

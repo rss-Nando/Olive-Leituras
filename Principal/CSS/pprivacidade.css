@@ -1,0 +1,560 @@
+/* Reset e variáveis */
+:root {
+    --dourado-principal: #FFD700;
+    --dourado-secundario: #D4AF37;
+    --dourado-escuro: #AA8C2C;
+    --dourado-claro: #FFE55C;
+    --borda-dourada: #B8860B;
+    --bege-claro: #FDF6E3;
+    --bege-escuro: #F5E6D3;
+    --marrom-escuro: #2C1810;
+    --marrom-medio: #5D4037;
+    --verde-escuro: #1B4728;
+    --cinza-claro: #f8f9fa;
+    --cinza-medio: #e9ecef;
+    --sombra-suave: 0 2px 20px rgba(0, 0, 0, 0.08);
+    --sombra-media: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --transicao-suave: all 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Jacques Francois', serif;
+    line-height: 1.6;
+    color: var(--marrom-escuro);
+    background-image: url(../imagensDaPagina/fundo.png);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Cabeçalho */
+.cabecalho-politica {
+    background: linear-gradient(135deg, var(--marrom-escuro) 0%, #1A0F08 100%);
+    color: var(--bege-claro);
+    padding: 40px 0;
+    border-bottom: 3px solid var(--borda-dourada);
+    box-shadow: var(--sombra-media);
+}
+
+.logo-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    transition: var(--transicao-suave);
+}
+
+.logo-link:hover {
+    transform: scale(1.05);
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    filter: brightness(1.2);
+}
+
+.cabecalho-politica h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--dourado-principal) 0%, var(--dourado-secundario) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.data-atualizacao {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: var(--dourado-claro);
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 40px;
+    align-items: start;
+}
+
+.politica-conteudo {
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: var(--sombra-media);
+    border: 1px solid var(--bege-escuro);
+}
+
+/* Seções */
+.secao {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--cinza-medio);
+}
+
+.secao:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.secao h2 {
+    color: var(--marrom-escuro);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--dourado-principal);
+    position: relative;
+}
+
+.secao h2::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--dourado-secundario);
+}
+
+.secao h3 {
+    color: var(--marrom-medio);
+    font-size: 1.3rem;
+    margin: 25px 0 15px 0;
+}
+
+.secao p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+.secao ul {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+.secao li {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.secao strong {
+    color: var(--marrom-escuro);
+    font-weight: bold;
+}
+
+/* Seção de Introdução */
+.introducao {
+    background: linear-gradient(135deg, var(--bege-claro) 0%, var(--bege-escuro) 100%);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid var(--dourado-principal);
+}
+
+/* Seção de Contato */
+.contato-info {
+    background: var(--cinza-claro);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid var(--dourado-secundario);
+}
+
+.contato-info p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Seção de Aceitação */
+.aceitacao {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid var(--dourado-principal);
+    text-align: center;
+}
+
+/* Menu Rápido */
+.menu-rapido {
+    position: sticky;
+    top: 20px;
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--bege-escuro);
+}
+
+.menu-rapido h3 {
+    color: var(--marrom-escuro);
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--dourado-principal);
+}
+
+.menu-rapido nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-rapido nav li {
+    margin-bottom: 8px;
+}
+
+.menu-rapido nav a {
+    color: var(--marrom-medio);
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: var(--transicao-suave);
+    display: block;
+    font-size: 0.95rem;
+}
+
+.menu-rapido nav a:hover {
+    background: var(--dourado-claro);
+    color: var(--marrom-escuro);
+    transform: translateX(5px);
+}
+
+/* Rodapé */
+/* Rodapé Exclusivo para Política de Privacidade */
+.rodape-politica {
+    background: linear-gradient(135deg, var(--marrom-escuro) 0%, #1A0F08 100%);
+    color: var(--bege-claro);
+    padding: 40px 0 20px 0;
+    border-top: 3px solid var(--borda-dourada);
+    margin-top: 60px;
+}
+
+.rodape-politica .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.voltar-inicio {
+    text-align: center;
+}
+
+.botao-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, var(--dourado-principal) 0%, var(--dourado-secundario) 100%);
+    color: var(--marrom-escuro);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: var(--transicao-suave);
+    border: 2px solid var(--borda-dourada);
+    box-shadow: var(--sombra-suave);
+}
+
+.botao-voltar:hover {
+    background: linear-gradient(135deg, var(--dourado-claro) 0%, #E6C158 100%);
+    transform: translateY(-3px);
+    box-shadow: var(--sombra-media);
+    color: var(--marrom-escuro);
+}
+
+.botao-voltar:active {
+    transform: translateY(-1px);
+}
+
+.links-legais {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    border-top: 1px solid rgba(184, 134, 11, 0.3);
+    border-bottom: 1px solid rgba(184, 134, 11, 0.3);
+    width: 100%;
+}
+
+.links-legais a {
+    color: var(--dourado-claro);
+    text-decoration: none;
+    transition: var(--transicao-suave);
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    position: relative;
+}
+
+.links-legais a:hover {
+    color: var(--marrom-escuro);
+    background: var(--dourado-principal);
+    transform: translateY(-2px);
+}
+
+.links-legais a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--dourado-principal);
+    transition: var(--transicao-suave);
+    transform: translateX(-50%);
+}
+
+.links-legais a:hover::after {
+    width: 80%;
+}
+
+.info-empresa {
+    text-align: center;
+    opacity: 0.8;
+}
+
+.info-empresa p {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.contato-rapido {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.contato-rapido h4 {
+    color: var(--dourado-principal);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.contato-rapido p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.contato-rapido a {
+    color: var(--dourado-claro);
+    text-decoration: none;
+    transition: var(--transicao-suave);
+}
+
+.contato-rapido a:hover {
+    color: var(--dourado-principal);
+    text-decoration: underline;
+}
+
+/* Responsividade do Footer */
+@media (max-width: 768px) {
+    .rodape-politica {
+        padding: 30px 0 15px 0;
+        margin-top: 40px;
+    }
+    
+    .links-legais {
+        gap: 20px;
+        padding: 15px 0;
+    }
+    
+    .links-legais a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .botao-voltar {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+    
+    .contato-rapido {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .rodape-politica {
+        padding: 25px 0 10px 0;
+    }
+    
+    .links-legais {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+    
+    .links-legais a {
+        padding: 8px 20px;
+        width: 200px;
+        text-align: center;
+    }
+    
+    .botao-voltar {
+        padding: 8px 20px;
+        font-size: 0.95rem;
+    }
+    
+    .info-empresa p {
+        font-size: 0.85rem;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .conteudo-principal {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .menu-rapido {
+        position: static;
+        order: -1;
+    }
+    
+    .politica-conteudo {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho-politica {
+        padding: 30px 0;
+    }
+    
+    .cabecalho-politica h1 {
+        font-size: 2rem;
+    }
+    
+    .conteudo-principal {
+        padding: 20px 0;
+    }
+    
+    .politica-conteudo {
+        padding: 20px;
+    }
+    
+    .secao {
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+    }
+    
+    .secao h2 {
+        font-size: 1.5rem;
+    }
+    
+    .secao h3 {
+        font-size: 1.2rem;
+    }
+    
+    .links-uteis {
+        gap: 15px;
+    }
+    
+    .links-uteis a {
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .cabecalho-politica {
+        padding: 20px 0;
+    }
+    
+    .cabecalho-politica h1 {
+        font-size: 1.8rem;
+    }
+    
+    .logo {
+        height: 50px;
+    }
+    
+    .politica-conteudo {
+        padding: 15px;
+    }
+    
+    .secao {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+    
+    .secao h2 {
+        font-size: 1.3rem;
+    }
+    
+    .secao p, .secao li {
+        font-size: 1rem;
+    }
+    
+    .links-uteis {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
+
+/* Animações suaves */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.secao {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.secao:nth-child(even) {
+    animation-delay: 0.1s;
+}
+
+.secao:nth-child(odd) {
+    animation-delay: 0.2s;
+}
+
+/* Scroll suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Destaque para links internos */
+.secao:target {
+    background: linear-gradient(135deg, var(--bege-claro) 0%, #fff9e6 100%);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid var(--dourado-principal);
+    animation: highlight 1s ease;
+}
+
+@keyframes highlight {
+    0% {
+        background: var(--dourado-claro);
+    }
+    100% {
+        background: linear-gradient(135deg, var(--bege-claro) 0%, #fff9e6 100%);
+    }
+}
