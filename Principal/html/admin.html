@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo - Olive Leituras</title>
+    <!-- CSS será adicionado posteriormente -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Cabeçalho do Admin -->
+    <header class="admin-header">
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="../imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras" class="admin-logo">
+                <h1>Painel Administrativo</h1>
+            </div>
+            <div class="admin-info">
+                <span class="admin-name">Administrador</span>
+                <button id="logoutBtn" class="logout-btn">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu de Navegação -->
+    <nav class="admin-nav">
+        <ul class="nav-menu">
+            <li><a href="#inclusao-livros" class="nav-link active">Inclusão de Livros</a></li>
+            <li><a href="#metricas" class="nav-link">Métricas e Gráficos</a></li>
+            <li><a href="#suporte" class="nav-link">Central de Suporte</a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="admin-main">
+        <!-- Seção 1: Inclusão de Livros -->
+        <section id="inclusao-livros" class="admin-section">
+            <div class="section-header">
+                <h2>Inclusão de Livros no Catálogo</h2>
+                <p>Adicione novos livros e HQs ao sistema Olive Leituras</p>
+            </div>
+
+            <div class="form-container">
+                <form class="book-form" id="bookForm">
+                    <div class="form-group">
+                        <label for="bookTitle">Título do Livro/HQ *</label>
+                        <input type="text" id="bookTitle" name="bookTitle" required placeholder="Digite o título completo">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookAuthor">Autor *</label>
+                        <input type="text" id="bookAuthor" name="bookAuthor" required placeholder="Nome do autor">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookIsbn">ISBN</label>
+                        <input type="text" id="bookIsbn" name="bookIsbn" placeholder="Código ISBN (opcional)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookCategory">Categoria *</label>
+                        <select id="bookCategory" name="bookCategory" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="hq">HQ e Graphic Novel</option>
+                            <option value="ficcao">Ficção</option>
+                            <option value="nao-ficcao">Não-Ficção</option>
+                            <option value="romance">Romance</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="fantasia">Fantasia</option>
+                            <option value="scifi">Ficção Científica</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookDescription">Sinopse *</label>
+                        <textarea id="bookDescription" name="bookDescription" required placeholder="Descreva a obra..." rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookPrice">Preço (R$) *</label>
+                        <input type="number" id="bookPrice" name="bookPrice" required step="0.01" min="0" placeholder="0,00">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookCover">Capa do Livro</label>
+                        <input type="file" id="bookCover" name="bookCover" accept="image/*">
+                        <small>Formatos aceitos: JPG, PNG, WEBP (Máx. 5MB)</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bookStock">Estoque Inicial *</label>
+                        <input type="number" id="bookStock" name="bookStock" required min="0" value="0">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary">Cadastrar Livro</button>
+                        <button type="reset" class="btn-secondary">Limpar Formulário</button>
+                    </div>
+
+                    <div class="form-notice">
+                        <p><strong>Atenção:</strong> Esta é uma demonstração. O formulário não funcionará.</p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Seção 2: Métricas e Gráficos -->
+        <section id="metricas" class="admin-section">
+            <div class="section-header">
+                <h2>Métricas e Análises</h2>
+                <p>Dados e estatísticas do Olive Leituras</p>
+            </div>
+
+            <div class="metrics-grid">
+                <!-- Cartões de Métricas Rápidas -->
+                <div class="metric-cards">
+                    <div class="metric-card">
+                        <div class="metric-icon">👥</div>
+                        <div class="metric-info">
+                            <h3>Total de Usuários</h3>
+                            <span class="metric-value">2.847</span>
+                            <span class="metric-change positive">+12% este mês</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">📚</div>
+                        <div class="metric-info">
+                            <h3>Livros Vendidos</h3>
+                            <span class="metric-value">1.563</span>
+                            <span class="metric-change positive">+8% este mês</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">💸</div>
+                        <div class="metric-info">
+                            <h3>Faturamento</h3>
+                            <span class="metric-value">R$ 89.421</span>
+                            <span class="metric-change positive">+15% este mês</span>
+                        </div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">🌐</div>
+                        <div class="metric-info">
+                            <h3>Acessos ao Site</h3>
+                            <span class="metric-value">45.892</span>
+                            <span class="metric-change positive">+22% este mês</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área de Gráficos -->
+                <div class="charts-container">
+                    <!-- Gráfico 1: Livros Mais Vendidos -->
+                    <div class="chart-wrapper">
+                        <h3>Top 5 - Livros Mais Vendidos</h3>
+                        <div class="chart-placeholder">
+                            <div class="chart-bars">
+                                <div class="bar-container">
+                                    <div class="bar-label">Batman: Ano Um</div>
+                                    <div class="bar" style="width: 95%">
+                                        <span class="bar-value">284 vendas</span>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-label">Sandman Vol. 1</div>
+                                    <div class="bar" style="width: 78%">
+                                        <span class="bar-value">234 vendas</span>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-label">Maus</div>
+                                    <div class="bar" style="width: 65%">
+                                        <span class="bar-value">195 vendas</span>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-label">Watchmen</div>
+                                    <div class="bar" style="width: 60%">
+                                        <span class="bar-value">180 vendas</span>
+                                    </div>
+                                </div>
+                                <div class="bar-container">
+                                    <div class="bar-label">V de Vingança</div>
+                                    <div class="bar" style="width: 55%">
+                                        <span class="bar-value">165 vendas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico 2: Acessos por Período -->
+                    <div class="chart-wrapper">
+                        <h3>Acessos ao Site (Últimos 7 Dias)</h3>
+                        <div class="chart-placeholder">
+                            <div class="line-chart">
+                                <div class="chart-point" style="left: 10%; bottom: 20%"></div>
+                                <div class="chart-point" style="left: 25%; bottom: 45%"></div>
+                                <div class="chart-point" style="left: 40%; bottom: 60%"></div>
+                                <div class="chart-point" style="left: 55%; bottom: 80%"></div>
+                                <div class="chart-point" style="left: 70%; bottom: 65%"></div>
+                                <div class="chart-point" style="left: 85%; bottom: 90%"></div>
+                                <div class="chart-point" style="left: 95%; bottom: 75%"></div>
+                                <div class="chart-line"></div>
+                            </div>
+                            <div class="chart-labels">
+                                <span>Seg</span>
+                                <span>Ter</span>
+                                <span>Qua</span>
+                                <span>Qui</span>
+                                <span>Sex</span>
+                                <span>Sáb</span>
+                                <span>Dom</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gráfico 3: Categorias Mais Populares -->
+                    <div class="chart-wrapper">
+                        <h3>Vendas por Categoria</h3>
+                        <div class="chart-placeholder">
+                            <div class="pie-chart">
+                                <div class="pie-segment" style="--percentage: 35%; --color: #FF6B6B;"></div>
+                                <div class="pie-segment" style="--percentage: 25%; --color: #4ECDC4;"></div>
+                                <div class="pie-segment" style="--percentage: 20%; --color: #45B7D1;"></div>
+                                <div class="pie-segment" style="--percentage: 15%; --color: #96CEB4;"></div>
+                                <div class="pie-segment" style="--percentage: 5%; --color: #FFEAA7;"></div>
+                            </div>
+                            <div class="pie-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #FF6B6B"></span>
+                                    <span>HQs (35%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #4ECDC4"></span>
+                                    <span>Ficção (25%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #45B7D1"></span>
+                                    <span>Fantasia (20%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #96CEB4"></span>
+                                    <span>Romance (15%)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #FFEAA7"></span>
+                                    <span>Outros (5%)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção 3: Central de Suporte -->
+        <section id="suporte" class="admin-section">
+            <div class="section-header">
+                <h2>Central de Suporte</h2>
+                <p>Atendimento aos chamados dos usuários</p>
+            </div>
+
+            <div class="support-container">
+                <!-- Lista de Chamados -->
+                <div class="tickets-list">
+                    <div class="tickets-header">
+                        <h3>Chamados em Aberto</h3>
+                        <div class="ticket-filters">
+                            <select id="ticketFilter">
+                                <option value="all">Todos os chamados</option>
+                                <option value="open">Em aberto</option>
+                                <option value="pending">Em andamento</option>
+                                <option value="resolved">Resolvidos</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="tickets">
+                        <!-- Chamado 1 -->
+                        <div class="ticket-item" data-status="open">
+                            <div class="ticket-header">
+                                <span class="ticket-id">#00123</span>
+                                <span class="ticket-priority high">Alta</span>
+                                <span class="ticket-status open">Aberto</span>
+                            </div>
+                            <div class="ticket-content">
+                                <h4>Problema com download do livro</h4>
+                                <p>Não consigo fazer o download do livro "Sandman Vol. 2" após a compra. O botão de download não funciona.</p>
+                                <div class="ticket-meta">
+                                    <span class="ticket-user">Maria Silva</span>
+                                    <span class="ticket-date">Há 2 horas</span>
+                                </div>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="btn-small primary">Responder</button>
+                                <button class="btn-small secondary">Marcar como Lido</button>
+                            </div>
+                        </div>
+
+                        <!-- Chamado 2 -->
+                        <div class="ticket-item" data-status="pending">
+                            <div class="ticket-header">
+                                <span class="ticket-id">#00122</span>
+                                <span class="ticket-priority medium">Média</span>
+                                <span class="ticket-status pending">Em Andamento</span>
+                            </div>
+                            <div class="ticket-content">
+                                <h4>Dúvida sobre assinatura</h4>
+                                <p>Gostaria de saber como cancelar minha assinatura premium e quais são as implicações.</p>
+                                <div class="ticket-meta">
+                                    <span class="ticket-user">João Santos</span>
+                                    <span class="ticket-date">Há 1 dia</span>
+                                </div>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="btn-small primary">Responder</button>
+                                <button class="btn-small success">Resolver</button>
+                            </div>
+                        </div>
+
+                        <!-- Chamado 3 -->
+                        <div class="ticket-item" data-status="open">
+                            <div class="ticket-header">
+                                <span class="ticket-id">#00121</span>
+                                <span class="ticket-priority low">Baixa</span>
+                                <span class="ticket-status open">Aberto</span>
+                            </div>
+                            <div class="ticket-content">
+                                <h4>Sugestão de melhoria</h4>
+                                <p>Seria interessante ter uma função de leitura em voz alta nos livros. Isso ajudaria muito usuários com deficiência visual.</p>
+                                <div class="ticket-meta">
+                                    <span class="ticket-user">Ana Costa</span>
+                                    <span class="ticket-date">Há 3 dias</span>
+                                </div>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="btn-small primary">Responder</button>
+                                <button class="btn-small secondary">Marcar como Lido</button>
+                            </div>
+                        </div>
+
+                        <!-- Chamado 4 -->
+                        <div class="ticket-item" data-status="resolved">
+                            <div class="ticket-header">
+                                <span class="ticket-id">#00120</span>
+                                <span class="ticket-priority medium">Média</span>
+                                <span class="ticket-status resolved">Resolvido</span>
+                            </div>
+                            <div class="ticket-content">
+                                <h4>Problema no pagamento</h4>
+                                <p>Meu cartão foi recusado mesmo tendo limite. Já tentei várias vezes.</p>
+                                <div class="ticket-meta">
+                                    <span class="ticket-user">Pedro Oliveira</span>
+                                    <span class="ticket-date">Há 5 dias</span>
+                                </div>
+                            </div>
+                            <div class="ticket-actions">
+                                <button class="btn-small primary">Ver Resposta</button>
+                                <button class="btn-small warning">Reabrir</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Área do Chat -->
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <h3>Chat de Suporte</h3>
+                        <div class="chat-status">
+                            <span class="status-indicator online"></span>
+                            <span>Online</span>
+                        </div>
+                    </div>
+
+                    <div class="chat-messages">
+                        <!-- Mensagens do Chat -->
+                        <div class="message user-message">
+                            <div class="message-content">
+                                <p>Olá, preciso de ajuda com meu pedido!</p>
+                                <span class="message-time">14:30</span>
+                            </div>
+                        </div>
+
+                        <div class="message admin-message">
+                            <div class="message-content">
+                                <p>Olá! Em que posso ajudá-lo hoje?</p>
+                                <span class="message-time">14:31</span>
+                            </div>
+                        </div>
+
+                        <div class="message user-message">
+                            <div class="message-content">
+                                <p>Comprei um livro mas não recebi o email de confirmação.</p>
+                                <span class="message-time">14:32</span>
+                            </div>
+                        </div>
+
+                        <div class="message admin-message">
+                            <div class="message-content">
+                                <p>Pode me informar o número do pedido? Vou verificar para você.</p>
+                                <span class="message-time">14:33</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chat-input">
+                        <input type="text" placeholder="Digite sua mensagem..." id="chatMessage">
+                        <button type="button" id="sendMessage">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé do Admin -->
+    <footer class="admin-footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Olive Leituras - Painel Administrativo</p>
+            <div class="footer-links">
+                <span>Usuário: admin@olivemail.com</span>
+                <span>Último acesso: Hoje às 14:25</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript será adicionado posteriormente -->
+    <script src="admin.js"></script>
+</body>
+</html>

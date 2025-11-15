@@ -6,7 +6,7 @@
         <title>Olive Leituras | Login</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href='../CSS/styleadmin.css'>
-        <script src='login.js'></script>
+        <script src='../JS/login.js' defer></script>
 
         <!--fonte-->
         <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
@@ -16,9 +16,15 @@
     </head>
     <body>
         <header class="cabecalho">
-            <a href="index.html" aria-label="Voltar para página inicial">
-                <img src="../imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital">
-            </a>
+            <div class="cabecalho-container">
+                <a href="index.html" class="logo-link" aria-label="Voltar para página inicial">
+                    <img src="../imagensDaPagina/logoDefinitiva.png" alt="Olive Leituras - Biblioteca Digital" class="logo">
+                </a>
+                <a href="index.html" class="botao-voltar">
+                    <i class='bx bx-arrow-back'></i>
+                    Voltar para o Catálogo
+                </a>
+            </div>
         </header>
 
         <main class="principal">
@@ -72,7 +78,6 @@
 
         <footer class="pezinho">
             <p>&copy; 2025 Olive Leituras - Biblioteca online</p>
-            <a href="index.html">← Voltar para o catálogo</a>
         </footer>
     </body>
 </html>

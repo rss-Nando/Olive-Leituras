@@ -418,62 +418,6 @@ body {
         rgba(255, 255, 255, 0.04) 100%);
 }
 
-/* RESPONSIVIDADE PARA A NOVA CAPA */
-
-@media (max-width: 1024px) {
-    .capa {
-        padding: 30px;
-    }
-    
-    .capa div {
-        padding: 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    .capa {
-        padding: 25px;
-        max-width: 320px;
-    }
-    
-    .capa div {
-        padding: 10px;
-    }
-    
-    .capa::after {
-        top: 6px;
-        left: 6px;
-        right: 6px;
-        bottom: 6px;
-    }
-}
-
-@media (max-width: 480px) {
-    .capa {
-        padding: 20px;
-        max-width: 280px;
-    }
-    
-    .capa div {
-        padding: 8px;
-    }
-    
-    .capa img {
-        border-radius: 10px;
-    }
-}
-
-@media (max-width: 360px) {
-    .capa {
-        padding: 15px;
-        max-width: 240px;
-    }
-    
-    .capa div {
-        padding: 6px;
-    }
-}
-
 /* Versão com efeito de livro físico - mais realista */
 .capa-livro-fisico {
     perspective: 1000px;
@@ -1440,5 +1384,61 @@ body {
     
     .botao-voltar.premium:hover {
         transform: none;
+    }
+}
+
+/* RESPONSIVIDADE PARA A NOVA CAPA */
+
+@media (max-width: 1024px) {
+    .capa {
+        padding: 30px;
+    }
+    
+    .capa div {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .capa {
+        padding: 25px;
+        max-width: 320px;
+    }
+    
+    .capa div {
+        padding: 10px;
+    }
+    
+    .capa::after {
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    .capa {
+        padding: 20px;
+        max-width: 280px;
+    }
+    
+    .capa div {
+        padding: 8px;
+    }
+    
+    .capa img {
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .capa {
+        padding: 15px;
+        max-width: 240px;
+    }
+    
+    .capa div {
+        padding: 6px;
     }
 }
