@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailInput = document.getElementById('email');
     const senhaInput = document.getElementById('senha');
     
-    // Credenciais do administrador (fixas, porque eu ia precisar de banco de dados para fazer o cadastramento)
+    // Credenciais do administrador
     const ADMIN_EMAIL = 'admin@olivemail.com';
     const ADMIN_SENHA = 'adminadmin';
-    const ADMIN_PAGE = 'admin.html'; // Página do painel administrativo
+    const ADMIN_PAGE = 'admin.html';
     
     // Função para exibir mensagens
     function exibirMensagem(mensagem, tipo) {
@@ -52,7 +52,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Função principal de login - APENAS LOGIN FIXO
+    // Função para criar sessão de administrador
+    function criarSessaoAdmin() {
+        const dadosSessao = {
+            logado: true,
+            email: ADMIN_EMAIL,
+            loginTime: new Date().toISOString(),
+            expiraEm: new Date(Date.now() + 8 * 60 * 60 * 1000).toISOString() // 8 horas
+        };
+        
+        sessionStorage.setItem('adminSession', JSON.stringify(dadosSessao));
+        localStorage.setItem('adminLogado', 'true');
+    }
+    
+    // Função principal de login
     function fazerLogin(email, senha) {
         // Validações básicas
         if (!email || !senha) {
@@ -65,19 +78,20 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         
-        // Verifica se é o admin (LOGIN FIXO)
+        // Verifica se é o admin
         if (email === ADMIN_EMAIL && senha === ADMIN_SENHA) {
             exibirMensagem('Login administrativo realizado com sucesso! Redirecionando...', 'sucesso');
             
-            // Simula delay para visualizar a mensagem
+            // Criar sessão
+            criarSessaoAdmin();
+            
+            // Redirecionar com parâmetro para confirmar login
             setTimeout(() => {
-                // Redireciona para a página administrativa
-                window.location.href = ADMIN_PAGE;
+                window.location.href = ADMIN_PAGE + '?fromLogin=true&t=' + Date.now();
             }, 1500);
             
             return true;
         } else {
-            // APENAS UMA OPÇÃO DE LOGIN VÁLIDA
             exibirMensagem('Email ou senha incorretos. Use: admin@olivemail.com / adminadmin', 'erro');
             return false;
         }
@@ -128,37 +142,84 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.borderColor = '#B8860B';
     });
     
-    // Preenchimento automático para desenvolvimento (opcional)
+    // Preenchimento automático para desenvolvimento
     function preencherCredenciaisAdmin() {
         // Apenas em ambiente local para facilitar testes
-        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        if (window.location.hostname === 'localhost' || 
+            window.location.hostname === '127.0.0.1' || 
+            window.location.hostname === '') {
+            
             emailInput.value = ADMIN_EMAIL;
             senhaInput.value = ADMIN_SENHA;
             
-            console.log('Credenciais pré-preenchidas para testes:');
-            console.log('Email: admin@olivemail.com');
-            console.log('Senha: adminadmin');
+            console.log('🔑 Credenciais pré-preenchidas para testes:');
+            console.log('📧 Email: admin@olivemail.com');
+            console.log('🔒 Senha: adminadmin');
         }
     }
     
-    // Descomente a linha abaixo para preenchimento automático em desenvolvimento
-    // preencherCredenciaisAdmin();
+    // Preencher automaticamente em desenvolvimento
+    preencherCredenciaisAdmin();
     
     // Adiciona instruções no console
     console.log('=== SISTEMA DE LOGIN OLIVE LEITURAS ===');
-    console.log('Credenciais de acesso administrativo:');
-    console.log('Email: admin@olivemail.com');
-    console.log('Senha: adminadmin');
-    console.log('==============================');
+    console.log('🔐 Credenciais de acesso administrativo:');
+    console.log('📧 Email: admin@olivemail.com');
+    console.log('🔒 Senha: adminadmin');
+    console.log('=====================================');
 });
 
-// Função global para verificar se está logado (pode ser usada em outras páginas)
+// Função global para verificar se está logado
 function verificarLoginAdmin() {
-    return localStorage.getItem('adminLogado') === 'true';
+    try {
+        // Verificar sessionStorage primeiro
+        const sessao = sessionStorage.getItem('adminSession');
+        if (sessao) {
+            const dados = JSON.parse(sessao);
+            
+            // Verificar se a sessão expirou
+            if (new Date() < new Date(dados.expiraEm)) {
+                return true;
+            } else {
+                // Sessão expirada, limpar
+                sessionStorage.removeItem('adminSession');
+                localStorage.removeItem('adminLogado');
+                return false;
+            }
+        }
+        
+        // Fallback para localStorage (legacy)
+        return localStorage.getItem('adminLogado') === 'true';
+    } catch (error) {
+        console.error('Erro ao verificar login:', error);
+        return false;
+    }
 }
 
-// Função para fazer logout (para usar no admin.html)
+// Função para fazer logout
 function fazerLogoutAdmin() {
+    // Limpar todos os dados de sessão
+    sessionStorage.removeItem('adminSession');
     localStorage.removeItem('adminLogado');
+    localStorage.removeItem('adminEmail');
+    localStorage.removeItem('adminLoginTime');
+    
+    // Redirecionar para login
     window.location.href = 'login.html';
+}
+
+// Função para obter informações do admin logado
+function obterInfoAdmin() {
+    try {
+        const sessao = sessionStorage.getItem('adminSession');
+        if (sessao) {
+            return JSON.parse(sessao);
+        }
+        return {
+            email: 'admin@olivemail.com',
+            logado: localStorage.getItem('adminLogado') === 'true'
+        };
+    } catch (error) {
+        return { email: 'admin@olivemail.com', logado: false };
+    }
 }
